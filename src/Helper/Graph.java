@@ -126,6 +126,14 @@ public class Graph {
         return myAdjList.get(v1).contains(v2);
     }
 
+    public Set<Vertex> NeighborOfVertex(String vertexName) {
+        Set<Vertex> neighborVertex = new HashSet<>();
+        for (Vertex w : this.adjacentTo(vertexName)) {
+            neighborVertex.add(w);
+        }
+        return neighborVertex;
+    }
+
     /**
      * Add to to from's set of neighbors, and add from to to's
      * set of neighbors. Does not add an edge if another edge

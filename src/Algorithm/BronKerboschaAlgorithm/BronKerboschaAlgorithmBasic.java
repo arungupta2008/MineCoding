@@ -37,15 +37,7 @@ public class BronKerboschaAlgorithmBasic {
             P.add(v);
         }
         BronKerboschaAlgorithmBasic bronKerboschaAlgorithmBasic = new BronKerboschaAlgorithmBasic();
-        bronKerboschaAlgorithmBasic.BronKerbosch1(new HashSet<>(R), new HashSet<>(P), new HashSet<>(X));
-    }
-
-    public Set<Vertex> NeighborOfVertex(String vertexName, Graph G) {
-        Set<Vertex> neighborVertex = new HashSet<>();
-        for (Vertex w : G.adjacentTo(vertexName)) {
-            neighborVertex.add(w);
-        }
-        return neighborVertex;
+        bronKerboschaAlgorithmBasic.BronKerbosch1(R, P, X);
     }
 
     public Set<Vertex> interSection(Set<Vertex> A, Set<Vertex> B) {
@@ -69,7 +61,9 @@ public class BronKerboschaAlgorithmBasic {
         } else {
             Set<Vertex> iterRatorSet = new HashSet<>(P);
             for (Vertex v : iterRatorSet) {
-                BronKerbosch1(union(R, v), interSection(P, NeighborOfVertex(v.name, graph)), interSection(X, NeighborOfVertex(v.name, graph)));
+                BronKerbosch1(union(R, v), interSection(P, graph.NeighborOfVertex(v.name)), interSection(X, graph.NeighborOfVertex(v.name)));
+                P.remove(v);
+                union(X,v);
             }
         }
     }
