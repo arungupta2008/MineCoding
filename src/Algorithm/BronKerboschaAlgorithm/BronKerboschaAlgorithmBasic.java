@@ -24,6 +24,7 @@ import java.util.Set;
 
 public class BronKerboschaAlgorithmBasic {
     public static Graph graph = null;
+
     public static void main(String[] args) {
         graph = new Graph();
         createGraph(graph);
@@ -39,14 +40,15 @@ public class BronKerboschaAlgorithmBasic {
         bronKerboschaAlgorithmBasic.BronKerbosch1(new HashSet<>(R), new HashSet<>(P), new HashSet<>(X));
     }
 
-    public Set<Vertex> NeighborOfVertex(String vertexName, Graph G){
+    public Set<Vertex> NeighborOfVertex(String vertexName, Graph G) {
         Set<Vertex> neighborVertex = new HashSet<>();
         for (Vertex w : G.adjacentTo(vertexName)) {
             neighborVertex.add(w);
         }
         return neighborVertex;
     }
-    public Set<Vertex> interSection(Set<Vertex> A, Set<Vertex> B){
+
+    public Set<Vertex> interSection(Set<Vertex> A, Set<Vertex> B) {
         Set<Vertex> A1 = new HashSet<>(A);
         Set<Vertex> B1 = new HashSet<>(B);
         A1.retainAll(B1);
@@ -55,25 +57,25 @@ public class BronKerboschaAlgorithmBasic {
         return intersection;
     }
 
-    public Set<Vertex> union(Set<Vertex> vertexSet, Vertex vertex){
+    public Set<Vertex> union(Set<Vertex> vertexSet, Vertex vertex) {
         Set<Vertex> vertexSet1 = new HashSet<>(vertexSet);
         vertexSet1.add(vertex);
         return vertexSet1;
     }
 
     private void BronKerbosch1(Set<Vertex> R, Set<Vertex> P, Set<Vertex> X) {
-        if(P.size() == 0 && X.size() == 0){
-            System.out.println("Maximal Set Found : "+R);
-        }else {
+        if (P.size() == 0 && X.size() == 0) {
+            System.out.println("Maximal Set Found : " + R);
+        } else {
             Set<Vertex> iterRatorSet = new HashSet<>(P);
             for (Vertex v : iterRatorSet) {
-                BronKerbosch1(new HashSet<>(union(R,v)), new HashSet<>(interSection(P, NeighborOfVertex(v.name, graph))), new HashSet<>(interSection(X, NeighborOfVertex(v.name, graph))));
+                BronKerbosch1(union(R, v), interSection(P, NeighborOfVertex(v.name, graph)), interSection(X, NeighborOfVertex(v.name, graph)));
             }
         }
     }
 
     private void printVertex(String vertexSetName, Set<Vertex> vertexSet) {
-        System.out.println(vertexSetName + " : "+ vertexSet);
+        System.out.println(vertexSetName + " : " + vertexSet);
     }
 
     private static void createGraph(Graph G) {
