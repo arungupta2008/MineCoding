@@ -7,22 +7,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by arun.gupta on 16/04/16.
+ * Created by arun.gupta on 17/04/16.
  */
-
-/*
-        *
-        BronKerbosch(R, P, X):
-       if P and X are both empty:
-           report R as a maximal clique
-       for each vertex v in P:
-           BronKerbosch(R ⋃ {v}, P ⋂ N(v), X ⋂ N(v))
-           P := P \ {v}
-           X := X ⋃ {v}
-        * */
-
-
-public class BronKerboschaAlgorithmBasic {
+public class BronKerboschaAlgorithmWithPivot {
     public static Graph graph = null;
 
     public static void main(String[] args) {
@@ -36,8 +23,8 @@ public class BronKerboschaAlgorithmBasic {
         for (Vertex v : graph.getVertices()) {
             P.add(v);
         }
-        BronKerboschaAlgorithmBasic bronKerboschaAlgorithmBasic = new BronKerboschaAlgorithmBasic();
-        bronKerboschaAlgorithmBasic.BronKerbosch(R, P, X);
+        BronKerboschaAlgorithmWithPivot bronKerboschaAlgorithmWithPivot = new BronKerboschaAlgorithmWithPivot();
+        bronKerboschaAlgorithmWithPivot.BronKerbosch(R, P, X);
     }
 
     public Set<Vertex> interSection(Set<Vertex> A, Set<Vertex> B) {
@@ -55,11 +42,26 @@ public class BronKerboschaAlgorithmBasic {
         return vertexSet1;
     }
 
+    public Set<Vertex> union(Set<Vertex> vertexSet, Set<Vertex> vertexSet1) {
+        Set<Vertex> newvertexSet = new HashSet<>(vertexSet);
+        newvertexSet.addAll(vertexSet);
+        newvertexSet.addAll(vertexSet1);
+        return newvertexSet;
+    }
+
     private void BronKerbosch(Set<Vertex> R, Set<Vertex> P, Set<Vertex> X) {
         if (P.size() == 0 && X.size() == 0) {
             System.out.println("Maximal Set Found : " + R);
         } else {
-            Set<Vertex> iterRatorSet = new HashSet<>(P);
+
+            //choose a pivot vertex u in P ⋃ X
+            Vertex u = graph.highestDegreeVertex(union(P, X));
+            System.out.println("Pivot Node  : "+u.name);
+
+            //P -  N(u) set
+            Set<Vertex> removedSet = new HashSet<>(P);
+            removedSet.removeAll(graph.NeighborOfVertex(u.name));
+            Set<Vertex> iterRatorSet = new HashSet<>(removedSet);
             for (Vertex v : iterRatorSet) {
                 BronKerbosch(union(R, v), interSection(P, graph.NeighborOfVertex(v.name)), interSection(X, graph.NeighborOfVertex(v.name)));
                 P.remove(v);

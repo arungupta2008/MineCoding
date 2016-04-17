@@ -165,6 +165,12 @@ public class Graph {
         return myAdjList.get(getVertex(name));
     }
 
+    public TreeSet<Vertex> adjacentVertexList(String name) {
+        Vertex v = getVertex(name);
+        if (v == null) return EMPTY_SET;
+        return myAdjList.get(getVertex(name));
+    }
+
     /**
      * Return an iterator over the neighbors of Helper.Vertex v
      * @param v the Helper.Vertex
@@ -345,5 +351,38 @@ public class Graph {
             System.out.println();
         }
 //        G.outputGDF("graph.txt");
+    }
+
+
+    /*
+    * Select First highest Degree Vertex. from Topological Order.
+    * */
+    public Vertex highestDegreeVertex() {
+        int vertexDegree = 0;
+        Vertex highestDegreeVertex = null;
+        for (Vertex v : this.getVertices()) {
+            TreeSet<Vertex> adjacentVertexSet =  adjacentVertexList(v.name);
+            if(adjacentVertexSet.size() > vertexDegree){
+                vertexDegree = adjacentVertexSet.size();
+                highestDegreeVertex = v;
+            }
+        }
+        return highestDegreeVertex;
+    }
+
+    /*
+    * Select First highest Degree Vertex.
+    * */
+    public Vertex highestDegreeVertex(Set<Vertex> vertexSet) {
+        int vertexDegree = 0;
+        Vertex highestDegreeVertex = null;
+        for (Vertex v : vertexSet) {
+            TreeSet<Vertex> adjacentVertexSet =  adjacentVertexList(v.name);
+            if(adjacentVertexSet.size() > vertexDegree){
+                vertexDegree = adjacentVertexSet.size();
+                highestDegreeVertex = v;
+            }
+        }
+        return highestDegreeVertex;
     }
 }
