@@ -63,7 +63,7 @@ public class BronKerboschaAlgorithmBasic {
             for (Vertex v : iterRatorSet) {
                 BronKerbosch1(union(R, v), interSection(P, graph.NeighborOfVertex(v.name)), interSection(X, graph.NeighborOfVertex(v.name)));
                 P.remove(v);
-                union(X,v);
+                X = union(X,v);
             }
         }
     }
