@@ -18,21 +18,17 @@ public class Problem1 {
     public static void main(String[] args) {
         Trie trie = new Trie();
         Scanner scanner = new Scanner(new InputStreamReader(System.in));
-        System.out.print("Only enter alphabets : ");
-        String input = "";
-        do {
-            input = scanner.nextLine();
-            trie.addWord(input);
-            System.out.println("Want to enter more? [Y/N]");
-            input = scanner.nextLine();
-        } while (input.equalsIgnoreCase("Y"));
+        System.out.print("Please enter words with Space : ");
+        String input = scanner.nextLine();
+        for (String inputCharacter: input.split("\\s+")){
+            trie.addWord(inputCharacter);
+        }
 
         List<TrieNode> trieNodeList = new ArrayList<>();
 
         System.out.print("Please enter Input Stream : ");
         input = scanner.nextLine();
         for (char latter : input.toCharArray()) {
-
             List<TrieNode> trieNodesIterator = new ArrayList<>(trieNodeList);
             int i = 0;
             for (TrieNode trieNodeIt : trieNodesIterator) {
@@ -42,11 +38,11 @@ public class Problem1 {
                 } else if (nextTrieNode.isLeaf()) {
                     System.out.println("Found a Dictionary : " + nextTrieNode.toString());
                 }else {
-                    trieNodeList.set(i,nextTrieNode);
+                    Collections.replaceAll(trieNodeList, trieNodeIt, nextTrieNode);
+                    //trieNodeList.set(i,nextTrieNode);
                 }
                 ++i;
             }
-
             TrieNode trieNode = trie.getNextTrieNode(latter);
             if (trieNode == null) {
 
