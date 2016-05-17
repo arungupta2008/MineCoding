@@ -11,6 +11,8 @@ import java.util.Set;
  */
 
 /*
+Maximum Clique Problem :
+Given a graph Find the Maximum Clique.
         *
         BronKerbosch(R, P, X):
        if P and X are both empty:
@@ -56,6 +58,10 @@ public class BronKerboschaAlgorithmBasic {
     }
 
     private void BronKerbosch(Set<Vertex> R, Set<Vertex> P, Set<Vertex> X) {
+        printVertex("R", R);
+        printVertex("P", P);
+        printVertex("X", X);
+        System.out.println();
         if (P.size() == 0 && X.size() == 0) {
             System.out.println("Maximal Set Found : " + R);
         } else {

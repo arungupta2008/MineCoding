@@ -50,6 +50,10 @@ public class BronKerboschaAlgorithmWithPivot {
     }
 
     private void BronKerbosch(Set<Vertex> R, Set<Vertex> P, Set<Vertex> X) {
+        printVertex("R", R);
+        printVertex("P", P);
+        printVertex("X", X);
+        System.out.println();
         if (P.size() == 0 && X.size() == 0) {
             System.out.println("Maximal Set Found : " + R);
         } else {
@@ -75,13 +79,26 @@ public class BronKerboschaAlgorithmWithPivot {
     }
 
     private static void createGraph(Graph G) {
-        G.addEdge("1", "5");
+//        G.addEdge("1", "5");
+//        G.addEdge("1", "2");
+//        G.addEdge("5", "2");
+//        G.addEdge("2", "3");
+//        G.addEdge("3", "4");
+//        G.addEdge("5", "4");
+//        G.addEdge("6", "4");
+
+
+
         G.addEdge("1", "2");
-        G.addEdge("5", "2");
+        G.addEdge("1", "3");
+        G.addEdge("1", "4");
         G.addEdge("2", "3");
         G.addEdge("3", "4");
-        G.addEdge("5", "4");
-        G.addEdge("6", "4");
+        G.addEdge("2", "4");
+        G.addEdge("2", "5");
+        G.addEdge("4", "5");
+        G.addEdge("5", "7");
+        G.addEdge("4", "6");
 
 //        G.addEdge("1", "2");
 //        G.addEdge("1", "3");
