@@ -6,19 +6,19 @@ import java.util.Stack;
 
 /**
  * Created by arun.gupta on 17/05/16.
- *
+ * <p>
  * http://www.informatik.uni-ulm.de/acm/Locals/2003/html/histogram.html
  */
 public class MaximumHistogramArea {
 
     public static void main(String[] args) {
-        int [] input1  = {7,2,5,3,1,4,4,5,1};
+        int[] input1 = {7, 2, 5, 3, 1, 4, 4, 5, 1};
         System.out.println(String.format("Input : %s  Area : %d", Arrays.toString(input1), findMaxHistogramAream(input1)));
 
-        int [] input2  = {7,4,5,3,1,4,4,5,1};
+        int[] input2 = {7, 4, 5, 3, 1, 4, 4, 5, 1};
         System.out.println(String.format("Input : %s  Area : %d", Arrays.toString(input2), findMaxHistogramAream(input2)));
 
-        int [] input3  = {7,4,5,4,1,4,4,5,1};
+        int[] input3 = {7, 4, 5, 4, 1, 4, 4, 5, 1};
         System.out.println(String.format("Input : %s  Area : %d", Arrays.toString(input3), findMaxHistogramAream(input3)));
     }
 
@@ -32,34 +32,34 @@ public class MaximumHistogramArea {
     }
 
     private static Integer getMaxHistogramArea(Stack<Integer> areaStack, int i, int top, int maxArea, int[] inputArray) {
-        for(;i<=inputArray.length; ++i){
+        for (; i <= inputArray.length; ++i) {
             int area = 0;
-            if(inputArray.length == i){
-                if(areaStack.size() > 0) {
+            if (inputArray.length == i) {
+                if (areaStack.size() > 0) {
                     top = areaStack.pop();
                     area = inputArray[top] * i;
                     maxArea = putArea(area, maxArea);
                     break;
                 }
             }
-            if(inputArray[i] < inputArray[i-1]){
+            if (inputArray[i] < inputArray[i - 1]) {
                 top = areaStack.pop();
                 if (areaStack.size() == 0) {
                     area = inputArray[top] * i;
                     maxArea = putArea(area, maxArea);
-                }else {
-                    while(inputArray[i] < inputArray[top]){
+                } else {
+                    while (inputArray[i] < inputArray[top]) {
                         if (areaStack.size() == 0) {
                             area = inputArray[top] * i;
                             maxArea = putArea(area, maxArea);
                             break;
-                        }else {
+                        } else {
                             area = inputArray[top] * (i - areaStack.peek() - 1);
                             maxArea = putArea(area, maxArea);
                         }
-                        if(inputArray[areaStack.peek()] >  inputArray[i]) {
+                        if (inputArray[areaStack.peek()] > inputArray[i]) {
                             top = areaStack.pop();
-                        }else {
+                        } else {
                             break;
                         }
                     }
