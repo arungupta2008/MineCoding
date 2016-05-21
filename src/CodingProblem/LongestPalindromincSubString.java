@@ -10,11 +10,14 @@ public class LongestPalindromincSubString {
 
     public static void main(String[] args) {
         String inputString = "abaxabaxabybaxabyb";
-        printLongestPalindrome(inputString);
-        inputString = "abaab";
-        printLongestPalindrome(inputString);
+//        printLongestPalindrome(inputString);
+//        inputString = "abaab";
+//        printLongestPalindrome(inputString);
+//
+//        inputString = "aabyybaabbyyyyyyyyyyyyyyyyyybbbbaaababababab";
+//        printLongestPalindrome(inputString);
 
-        inputString = "aabyybaabbyyyyyyyyyyyyyyyyyybbbbaaababababab";
+        inputString = "abbba";
         printLongestPalindrome(inputString);
 
     }
@@ -137,8 +140,10 @@ public class LongestPalindromincSubString {
     }
 
     private static int getPalindromeLength(int currentLocation, char[] inputString, int leastPalindromeSize) {
-        int LW = currentLocation - leastPalindromeSize;
-        int RW = currentLocation + leastPalindromeSize;
+        double val = (double)leastPalindromeSize/2;
+        Long roundOff = Math.round(val);
+        int LW = currentLocation - roundOff.intValue();
+        int RW = currentLocation + roundOff.intValue();
         return findPalindromeLenght(LW, RW, inputString);
     }
 
