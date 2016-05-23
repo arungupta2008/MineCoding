@@ -1,7 +1,6 @@
 package AlgorithmProblems;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -86,7 +85,7 @@ public class DivideArrayForMinDiff {
 
     private static int findMin(ArrayList<Integer> arr1) {
 
-        ArrayList<Integer> list2 = new ArrayList<>(arr1.subList(arr1.size() - 1, arr1.size()));
+        ArrayList<Integer> list2 = new ArrayList<Integer>(arr1.subList(arr1.size() - 1, arr1.size()));
         arr1.remove(arr1.size() - 1);
         while (true) {
             System.out.println("Array 1 : "+ arr1);
@@ -125,8 +124,8 @@ public class DivideArrayForMinDiff {
 
     public static void main(String args[]) {
 
-        ArrayList<Integer> org = new ArrayList<>();
-        org = new ArrayList<>();
+        ArrayList<Integer> org;
+        org = new ArrayList<Integer>();
         org.add(1);
         org.add(2);
         org.add(3);

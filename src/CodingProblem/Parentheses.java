@@ -19,7 +19,7 @@ public class Parentheses {
     }
 
     private static boolean validateParantheses(String parenthesesInput) {
-        Stack<Character> characterStack = new Stack<>();
+        Stack<Character> characterStack = new Stack<Character>();
         //char [] parenthesesInputCharArray = parenthesesInput.toCharArray();
         for(char charInput : parenthesesInput.toCharArray()){
             if(validChar(charInput)) {

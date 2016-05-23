@@ -2,10 +2,11 @@ package AlgorithmProblems.TrieProblem;
 
 import Algorithm.Trie.Trie;
 import Algorithm.Trie.TrieNode;
-import Helper.Vertex;
-
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by arun.gupta on 20/04/16.
@@ -24,12 +25,12 @@ public class Problem1 {
             trie.addWord(inputCharacter);
         }
 
-        List<TrieNode> trieNodeList = new ArrayList<>();
+        List<TrieNode> trieNodeList = new ArrayList<TrieNode>();
 
         System.out.print("Please enter Input Stream : ");
         input = scanner.nextLine();
         for (char latter : input.toCharArray()) {
-            List<TrieNode> trieNodesIterator = new ArrayList<>(trieNodeList);
+            List<TrieNode> trieNodesIterator = new ArrayList<TrieNode>(trieNodeList);
             int i = 0;
             for (TrieNode trieNodeIt : trieNodesIterator) {
                 TrieNode nextTrieNode = trie.getNextTrieNode(latter, trieNodeIt);

@@ -28,8 +28,8 @@ public class BronKerboschaAlgorithmWithPivot {
     }
 
     public Set<Vertex> interSection(Set<Vertex> A, Set<Vertex> B) {
-        Set<Vertex> A1 = new HashSet<>(A);
-        Set<Vertex> B1 = new HashSet<>(B);
+        Set<Vertex> A1 = new HashSet<Vertex>(A);
+        Set<Vertex> B1 = new HashSet<Vertex>(B);
         A1.retainAll(B1);
         Set<Vertex> intersection = new HashSet<Vertex>(A1); // use the copy constructor
         intersection.retainAll(B1);
@@ -37,13 +37,13 @@ public class BronKerboschaAlgorithmWithPivot {
     }
 
     public Set<Vertex> union(Set<Vertex> vertexSet, Vertex vertex) {
-        Set<Vertex> vertexSet1 = new HashSet<>(vertexSet);
+        Set<Vertex> vertexSet1 = new HashSet<Vertex>(vertexSet);
         vertexSet1.add(vertex);
         return vertexSet1;
     }
 
     public Set<Vertex> union(Set<Vertex> vertexSet, Set<Vertex> vertexSet1) {
-        Set<Vertex> newvertexSet = new HashSet<>(vertexSet);
+        Set<Vertex> newvertexSet = new HashSet<Vertex>(vertexSet);
         newvertexSet.addAll(vertexSet);
         newvertexSet.addAll(vertexSet1);
         return newvertexSet;
@@ -63,9 +63,9 @@ public class BronKerboschaAlgorithmWithPivot {
             System.out.println("Pivot Node  : "+u.name);
 
             //P -  N(u) set
-            Set<Vertex> removedSet = new HashSet<>(P);
+            Set<Vertex> removedSet = new HashSet<Vertex>(P);
             removedSet.removeAll(graph.NeighborOfVertex(u.name));
-            Set<Vertex> iterRatorSet = new HashSet<>(removedSet);
+            Set<Vertex> iterRatorSet = new HashSet<Vertex>(removedSet);
             for (Vertex v : iterRatorSet) {
                 BronKerbosch(union(R, v), interSection(P, graph.NeighborOfVertex(v.name)), interSection(X, graph.NeighborOfVertex(v.name)));
                 P.remove(v);

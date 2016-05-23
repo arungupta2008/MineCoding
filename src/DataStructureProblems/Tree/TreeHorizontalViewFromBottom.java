@@ -43,7 +43,7 @@ class Tree {
         int hd = 0;
 
         // TreeMap which stores key value pair sorted on key value
-        Map<Integer, Integer> map = new TreeMap<>();
+        Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
 
         // Queue to store tree nodes in level order traversal
         Queue<TreeNode> queue = new LinkedList<TreeNode>();

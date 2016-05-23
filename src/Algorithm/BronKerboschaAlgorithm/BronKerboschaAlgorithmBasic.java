@@ -43,8 +43,8 @@ public class BronKerboschaAlgorithmBasic {
     }
 
     public Set<Vertex> interSection(Set<Vertex> A, Set<Vertex> B) {
-        Set<Vertex> A1 = new HashSet<>(A);
-        Set<Vertex> B1 = new HashSet<>(B);
+        Set<Vertex> A1 = new HashSet<Vertex>(A);
+        Set<Vertex> B1 = new HashSet<Vertex>(B);
         A1.retainAll(B1);
         Set<Vertex> intersection = new HashSet<Vertex>(A1); // use the copy constructor
         intersection.retainAll(B1);
@@ -52,7 +52,7 @@ public class BronKerboschaAlgorithmBasic {
     }
 
     public Set<Vertex> union(Set<Vertex> vertexSet, Vertex vertex) {
-        Set<Vertex> vertexSet1 = new HashSet<>(vertexSet);
+        Set<Vertex> vertexSet1 = new HashSet<Vertex>(vertexSet);
         vertexSet1.add(vertex);
         return vertexSet1;
     }
@@ -65,7 +65,7 @@ public class BronKerboschaAlgorithmBasic {
         if (P.size() == 0 && X.size() == 0) {
             System.out.println("Maximal Set Found : " + R);
         } else {
-            Set<Vertex> iterRatorSet = new HashSet<>(P);
+            Set<Vertex> iterRatorSet = new HashSet<Vertex>(P);
             for (Vertex v : iterRatorSet) {
                 BronKerbosch(union(R, v), interSection(P, graph.NeighborOfVertex(v.name)), interSection(X, graph.NeighborOfVertex(v.name)));
                 P.remove(v);

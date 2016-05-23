@@ -127,7 +127,7 @@ public class Graph {
     }
 
     public Set<Vertex> NeighborOfVertex(String vertexName) {
-        Set<Vertex> neighborVertex = new HashSet<>();
+        Set<Vertex> neighborVertex = new HashSet<Vertex>();
         for (Vertex w : this.adjacentTo(vertexName)) {
             neighborVertex.add(w);
         }

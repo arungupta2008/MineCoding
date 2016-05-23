@@ -1,6 +1,5 @@
 package CodingProblem;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 
@@ -23,7 +22,7 @@ public class MaximumHistogramArea {
     }
 
     private static Integer findMaxHistogramAream(int[] input1) {
-        Stack<Integer> areaStack = new Stack<>();
+        Stack<Integer> areaStack = new Stack<Integer>();
         areaStack.push(0);
         int i = 1;
         int top = 0;

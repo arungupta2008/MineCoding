@@ -1,8 +1,8 @@
 package AlgorithmProblems.DynamicProgramming;
 
-import Helper.Vertex;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by arun.gupta on 23/04/16.
@@ -48,9 +48,9 @@ public class SetpsProblem {
         } else if(currentStepsDistance > distance){
             response =  0;
         }else {
-            List<Integer> iterRatorSet = new ArrayList<>(setps);
+            List<Integer> iterRatorSet = new ArrayList<Integer>(setps);
             for (int step : iterRatorSet) {
-                List<Integer> newSteps = new ArrayList<>(setps);
+                List<Integer> newSteps = new ArrayList<Integer>(setps);
                 newSteps.remove(step);
                 response = response + countSetps(distance, newSteps, step + currentStepsDistance);
             }
