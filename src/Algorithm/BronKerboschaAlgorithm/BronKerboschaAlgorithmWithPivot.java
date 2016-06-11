@@ -89,8 +89,8 @@ public class BronKerboschaAlgorithmWithPivot {
 
 
 
-        G.addEdge("1", "2");
         G.addEdge("1", "3");
+        G.addEdge("1", "2");
         G.addEdge("1", "4");
         G.addEdge("2", "3");
         G.addEdge("3", "4");
@@ -104,5 +104,10 @@ public class BronKerboschaAlgorithmWithPivot {
 //        G.addEdge("1", "3");
 //        G.addEdge("2", "3");
 //        G.addEdge("2", "4");
+
+        String json = "{\\\"a\\\"; \"1\\4\"}";
+        String finalJsonStr = json.replace("\\\"", "\"");
+        System.out.printf("finalJsonStr "+ finalJsonStr);
+        System.out.println();
     }
 }

@@ -10,14 +10,20 @@ public class LongestPalindromincSubString {
 
     public static void main(String[] args) {
         String inputString = "abaxabaxabybaxabyb";
-//        printLongestPalindrome(inputString);
-//        inputString = "abaab";
-//        printLongestPalindrome(inputString);
-//
-//        inputString = "aabyybaabbyyyyyyyyyyyyyyyyyybbbbaaababababab";
-//        printLongestPalindrome(inputString);
+        printLongestPalindrome(inputString);
+        inputString = "abaab";
+        printLongestPalindrome(inputString);
+
+        inputString = "aabyybaabbyyyyyyyyyyyyyyyyyybbbbaaababababab";
+        printLongestPalindrome(inputString);
 
         inputString = "abbba";
+        printLongestPalindrome(inputString);
+
+        inputString = "yyyyy";
+        printLongestPalindrome(inputString);
+
+        inputString = "yyyyyy";
         printLongestPalindrome(inputString);
 
     }
