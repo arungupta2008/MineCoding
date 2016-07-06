@@ -12,7 +12,7 @@ public abstract class Beverage {
     }
 
     String description = "No Beverage";
-    Size size;
+    Size size = null;
 
     public Size getSize(){
         return size;
@@ -22,7 +22,10 @@ public abstract class Beverage {
         this.size = size;
     }
     public String getDescription(){
-        return description;
+        if(size == null){
+            size = Size.Large;
+        }
+        return size.name() + " "+ description;
     }
     public void setDescription(String name){
         this.description = name;
