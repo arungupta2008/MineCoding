@@ -48,7 +48,7 @@ public class ArrayPartitionProblem {
         for (; !sol[halfsumcloser]; halfsumcloser--) {
             System.out.println("halfsumcloser : " + halfsumcloser);
         }
-        System.out.println("halfsumcloser : " + halfsumcloser);
+        System.out.println("halfsumcloser--  : " + halfsumcloser);
         System.out.println("The Minimum sum After partioning the inputArray is :" + ((sum - halfsumcloser) - halfsumcloser));
 
     }

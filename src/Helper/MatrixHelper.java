@@ -4,11 +4,11 @@ package Helper;
  * Created by arun.gupta on 05/07/16.
  */
 public class MatrixHelper {
-    public static void PrintMatrix(final Integer[][] matrix, int i, int j) {
+    public static void PrintMatrix(final Object[][] matrix, int i, int j) {
         System.out.print("\n");
         for (int l = 0; l < i; ++l) {
             for (int k = 0; k < j; ++k) {
-                System.out.printf("%12d", matrix[l][k]);
+                System.out.printf("%12s", matrix[l][k].toString());
             }
             System.out.print("\n");
         }

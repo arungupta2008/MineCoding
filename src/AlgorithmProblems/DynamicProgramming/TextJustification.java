@@ -17,7 +17,16 @@ import java.util.List;
  exit
 
 
- Nights into Dreams... is an action video game developed by Sonic Team and published by Sega for the Sega Saturn in 1996. The story follows two teenagers, Claris and Elliot, who enter a dream world called Nightopia where all dreams take place. With the help of Nights, they begin a journey to stop the evil ruler Wizeman from destroying Nightopia and consequently the real world. Nights flies through Claris and Elliot's dreams, gathering energy to defeat Wizeman and save Nightopia. Development began soon after the release of Sonic & Knuckles in 1994, and was led by Sonic Team veterans Yuji Naka, Naoto Ohshima, and Takashi Iizuka. Naka began the project with flight as a main theme, and Ohshima designed the character Nights to resemble an angel that could fly like a bird. An analogue controller, known as the Saturn 3D controller, was designed alongside the game. Nights into Dreams... received positive reviews upon release; critics praised the graphics, gameplay, soundtrack, and atmosphere. It has been included on multiple lists as the best Sega Saturn game of all time, as well as one of the best video games ever made. (Full article...)
+ Nights into Dreams... is an action video game developed by Sonic Team and published by Sega for the Sega Saturn in
+ 1996. The story follows two teenagers, Claris and Elliot, who enter a dream world called Nightopia where all dreams
+ take place. With the help of Nights, they begin a journey to stop the evil ruler Wizeman from destroying Nightopia
+ and consequently the real world. Nights flies through Claris and Elliot's dreams, gathering energy to defeat Wizeman
+ and save Nightopia. Development began soon after the release of Sonic & Knuckles in 1994, and was led by Sonic Team
+ veterans Yuji Naka, Naoto Ohshima, and Takashi Iizuka. Naka began the project with flight as a main theme, and
+ Ohshima  designed the character Nights to resemble an angel that could fly like a bird. An analogue controller,
+ known  as the Saturn 3D controller, was designed alongside the game. Nights into Dreams... received positive reviews
+ upon release; critics praised the graphics, gameplay, soundtrack, and atmosphere. It has been included on multiple
+ lists as the best Sega Saturn game of all time, as well as one of the best video games ever made. (Full article...)
  exit
  *
  */
