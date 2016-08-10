@@ -4,7 +4,8 @@ import java.util.*;
 /**
  * Created by arun.gupta on 08/07/16.
  *
- * 	36.  Given three prime number(p1, p2, p3) and an integer k. Find the first(smallest) k integers which have only p1, p2, p3 or a combination of them as their prime factors.
+ * 	36.  Given three prime number(p1, p2, p3) and an integer k. Find the first(smallest) k integers which have only
+ * 	p1,  p2, p3 or a combination of them as their prime factors.
 
  */
 public class PrimeFactorProblem {

@@ -13,13 +13,30 @@ import java.text.DecimalFormat;
  */
 public class BiasedCoinKProbability {
     public static void main(String[] args) {
-        Double[] probability = {0.5, .4, .6, .7, .2, .1};
-        int k = 3;
-        System.out.println("Probability is :  " + findProbabilityOfExactKHeads(probability, k));
+//        Double[] probability = {0.5, .4, .6, .7, .2, .1};
+//        int k = 3;
+//        System.out.println("Probability is :  " + findProbabilityOfExactKHeads(probability, k));
+//
+//        Double[] probability1 = {0.5, .4};
+//        int k1 = 2;
+//        System.out.println("Probability is :  " + findProbabilityOfExactKHeads(probability1, k1));
+//
+//        Double[] probability2 = {0.5 ,0.65, .45, .15, .5};
+//        int k2 = 3;
+//        System.out.println("Probability is :  " + findProbabilityOfExactKHeads(probability2, k2));
+//
+//        Double[] probability3 = {0.5, .5, .5};
+//        int k3 = 2;
+//        System.out.println("Probability is :  " + findProbabilityOfExactKHeads(probability3, k3));
+//
+//        Double[] probability4 = {0.5, .3, .2};
+//        int k4 = 2;
+//        System.out.println("Probability is :  " + findProbabilityOfExactKHeads(probability4, k4));
 
-        Double[] probability1 = {0.5, .4};
-        int k1 = 2;
-        System.out.println("Probability is :  " + findProbabilityOfExactKHeads(probability1, k1));
+        Double[] probability5 = {0.5, .3, .2, .15, .45};
+        int k5 = 3;
+        System.out.println("Probability is :  " + findProbabilityOfExactKHeads(probability5, k5));
+
 
     }
 
@@ -53,11 +70,16 @@ public class BiasedCoinKProbability {
                 // Calculating Probability of coming 3 HEAD of of 3 Coins which will be P(0,0)*P(1,1)*P(2,2)*P(3,3)
                 // Note Here P(0,0) =1
                 if (i == j) {
-                    costMatrix[i][j] = Double.valueOf(df.format(costMatrix[i - 1][j - 1] * probability[j-1]));
+                    costMatrix[i][j] = Double.valueOf(df.format(costMatrix[i - 1][j - 1] * probability[j - 1]));
                 } else if (i < j) {
-                    costMatrix[i][j] = Double.valueOf(df.format(costMatrix[i][j - 1] * (1 - probability[j-1]) +
+                    // Recurrence Relation : P(i,j) = Probability of Getting i heads without including j the Coin +
+                    //  Probability of Getting i heads including jthe Coin
+                    //P(3,4) = P(3,3) (1-P[4]) + P(2,3) (P[4]);
+                    // Here i = coins with i heads
+                    // Here j = first J coins out of N coins.
+                    costMatrix[i][j] = Double.valueOf(df.format(costMatrix[i][j - 1] * (1 - probability[j - 1]) +
                             costMatrix[i - 1][j -
-                            1] * probability[j-1]));
+                                    1] * probability[j - 1]));
                 }
                 MatrixHelper.PrintMatrix(costMatrix, k + 1, probability.length + 1);
             }

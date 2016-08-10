@@ -33,7 +33,7 @@ public class MaxSumContiguousSubarray {
 
     }
 
-    // Standard Solution
+    // Standard CalenderSorting
     public static int maxSubArray(int[] A) {
         int newsum=A[0];
         int max=A[0];
@@ -44,7 +44,7 @@ public class MaxSumContiguousSubarray {
         return max;
     }
 
-    // Mine Solution
+    // Mine CalenderSorting
     private static void findMaxSumContiguousSubarray1(int[] input) {
         int maxSum = input[0];
         int maxStart = 0;
@@ -75,7 +75,7 @@ public class MaxSumContiguousSubarray {
         System.out.println("Max Sum  : "+maxSum);
     }
 
-    // Incorrect Solution by me.
+    // Incorrect CalenderSorting by me.
     private static void findMaxSumContiguousSubarray(int[] input) {
         int maxSum = input[0];
         int maxStart = 0;

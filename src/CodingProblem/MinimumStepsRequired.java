@@ -81,31 +81,31 @@ public class MinimumStepsRequired {
     }
 
     private static void calculateMinSteps(List<TwoDPoint> points) {
-        int totalSteps = 0;
+        int totalisteps = 0;
         int x = points.get(0).getXPoint();
         int y = points.get(0).getYPoint();
         for (int i =1; i< points.size(); ++i){
-            totalSteps += Math.max(Math.abs(x-points.get(i).getXPoint()), Math.abs(y-points.get(i).getYPoint()));
+            totalisteps += Math.max(Math.abs(x-points.get(i).getXPoint()), Math.abs(y-points.get(i).getYPoint()));
             x = points.get(i).getXPoint();
             y = points.get(i).getYPoint();
-            System.out.println("Steps : "+totalSteps);
+            System.out.println("Steps : "+totalisteps);
         }
-        System.out.println("Steps : "+totalSteps);
+        System.out.println("Steps : "+totalisteps);
     }
 
     public static int coverPoints(ArrayList<Integer> X, ArrayList<Integer> Y) {
         int x = X.get(0);
         int y = Y.get(0);
-        int totalSteps = 0;
+        int totalisteps = 0;
         if(X.size() == 1){
             return 0;
         }
         for(int i = 1; i < X.size(); ++i){
-            totalSteps += Math.max(Math.abs(x-X.get(i)), Math.abs(y-Y.get(i)));
+            totalisteps += Math.max(Math.abs(x-X.get(i)), Math.abs(y-Y.get(i)));
             x = X.get(i);
             y = Y.get(i);
-            System.out.println("Steps : "+totalSteps);
+            System.out.println("Steps : "+totalisteps);
         }
-        return totalSteps;
+        return totalisteps;
     }
 }
