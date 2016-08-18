@@ -37,10 +37,10 @@ import java.util.Deque;
  */
 public class MaximumOfAllSubArrayOfSizeK {
     public static void main(String[] args) {
-        //int [] inputArray = {3,5,6,4,2,4,5,6,4,3,2,4,5,6};
+        int [] inputArray = {3,5,6,4,2,4,5,6,4,3,2,4,5,6};
         //int [] inputArray = {3,2,5,2,1,5};
-        int[] inputArray = {3, 2, 3, 2, 5, 6, 7, 3, 2, 6};
-        int k = 5;
+//        int[] inputArray = {3, 2, 3, 2, 5, 6, 7, 3, 2, 6};
+        int k = 3;
         findMaximumOfAllSubArray(inputArray, k);
     }
 

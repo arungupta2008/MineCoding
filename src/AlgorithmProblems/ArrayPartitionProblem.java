@@ -12,6 +12,11 @@ import java.util.Scanner;
  * https://chinmaylokesh.wordpress.com/2011/02/10/balanced-partition-problem-finding-the-minimized-sum-between-two-partitions-of-a-set-of-positive-integers/
  *
  * It only prints how much the  Diff would be if Two list are partitioned.
+ *
+ * First i try to Find out out of all sum/2 which sum can be generated make from 0 to Sum/2
+ * By using boolean array i save that data.
+ *
+ * then Latest Value which can be some is the value.
  */
 public class ArrayPartitionProblem {
 

@@ -6,6 +6,21 @@ import java.util.Scanner;
 
 /**
  * Created by arun.gupta on 09/08/16.
+ * Booking.com
+ *
+ *
+ 66
+ 10
+ 18
+ 11
+ 21
+ 28
+ 31
+ 38
+ 40
+ 55
+ 60
+ 62
  */
 public class TwoPairsWithSumAsX {
 

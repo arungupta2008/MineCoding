@@ -18,22 +18,27 @@ Below are the four ways
  3 step
 * */
 public class SetpsProblem {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
-        List<Integer> setps = new ArrayList<Integer>(Arrays.asList(1,2,3));
+        List<Integer> steps = new ArrayList<Integer>(Arrays.asList(1, 2, 3));
         int distance = 10;
         int currentStepsDistance = 0;
         //System.out.println("Steps : "+countSetps(distance,setps,currentStepsDistance));
-        System.out.println("Steps with unique Steps : "+countSetpsWithUniqueSteps(distance,setps,currentStepsDistance));
+        System.out.println("Steps with unique Steps : " + countSetpsWithUniqueSteps(distance, steps, currentStepsDistance));
     }
 
 
     private static int countSetps(int distance, List<Integer> setps, int currentStepsDistance) {
         int response = 0;
-        if(currentStepsDistance == distance){
-             response =  1;
-        } else if(currentStepsDistance > distance){
-            response =  0;
-        }else {
+        if (currentStepsDistance == distance) {
+            response = 1;
+        } else if (currentStepsDistance > distance) {
+            response = 0;
+        } else {
             for (int step : setps) {
                 response = response + countSetps(distance, setps, step + currentStepsDistance);
             }
@@ -41,13 +46,14 @@ public class SetpsProblem {
         return response;
     }
 
+
     private static int countSetpsWithUniqueSteps(int distance, List<Integer> setps, int currentStepsDistance) {
         int response = 0;
-        if(currentStepsDistance == distance){
-            response =  1;
-        } else if(currentStepsDistance > distance){
-            response =  0;
-        }else {
+        if (currentStepsDistance == distance) {
+            response = 1;
+        } else if (currentStepsDistance > distance) {
+            response = 0;
+        } else {
             List<Integer> iterRatorSet = new ArrayList<Integer>(setps);
             for (int step : iterRatorSet) {
                 List<Integer> newSteps = new ArrayList<Integer>(setps);

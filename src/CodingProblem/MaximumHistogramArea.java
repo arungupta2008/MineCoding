@@ -7,15 +7,17 @@ import java.util.Stack;
  * Created by arun.gupta on 17/05/16.
  * <p>
  * http://www.informatik.uni-ulm.de/acm/Locals/2003/html/histogram.html
+ *
+ * Find the largest rectangular area possible in a given h histogram where the largest rectangle can be made of a number of contiguous bars. For simplicity, assume that all bars have same width and the width is 1 unit. http://www.informatik.uni-ulm.de/acm/Locals/2003/html/histogram.html
  */
 public class MaximumHistogramArea {
 
     public static void main(String[] args) {
-        int[] input1 = {7, 2, 5, 3, 1, 4, 4, 5, 1};
-        System.out.println(String.format("Input : %s  Area : %d", Arrays.toString(input1), findMaxHistogramAream(input1)));
-
-        int[] input2 = {7, 4, 5, 3, 1, 4, 4, 5, 1};
-        System.out.println(String.format("Input : %s  Area : %d", Arrays.toString(input2), findMaxHistogramAream(input2)));
+//        int[] input1 = {7, 2, 5, 3, 1, 4, 4, 5, 1};
+//        System.out.println(String.format("Input : %s  Area : %d", Arrays.toString(input1), findMaxHistogramAream(input1)));
+//
+//        int[] input2 = {7, 4, 5, 3, 1, 4, 4, 5, 1};
+//        System.out.println(String.format("Input : %s  Area : %d", Arrays.toString(input2), findMaxHistogramAream(input2)));
 
         int[] input3 = {7, 4, 5, 4, 1, 4, 4, 5, 1};
         System.out.println(String.format("Input : %s  Area : %d", Arrays.toString(input3), findMaxHistogramAream(input3)));
