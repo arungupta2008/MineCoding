@@ -3,6 +3,10 @@ package CodingLearning.DesignPattern.DecorativePattern.StarBuzzCofee.BaseBeverag
 import CodingLearning.DesignPattern.DecorativePattern.StarBuzzCofee.Beverage;
 import CodingLearning.DesignPattern.DecorativePattern.StarBuzzCofee.exception.SizeNotFoundException;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by arun.gupta on 11/06/16.
  */
@@ -15,6 +19,8 @@ public class DarkRoast extends Beverage {
 
     @Override
     public double cost() throws SizeNotFoundException {
+        Set in  = new HashSet<>();
+        in.add("df");
         switch (getSize()){
             case Small:
                 return 10.0;

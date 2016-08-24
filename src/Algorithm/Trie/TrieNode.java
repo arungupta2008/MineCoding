@@ -17,6 +17,51 @@ public class TrieNode {
     private boolean isWord;     //Does this node represent the last character of a word
     private char character;     //The character this node represents
 
+    public TrieNode(TrieNode response) {
+        this.parent = response.getParent();
+        this.children = response.getChildren();
+        this.isLeaf = response.isLeaf();
+        this.isWord = response.isWord;
+        this.character = response.character;
+    }
+
+
+    public TrieNode getParent() {
+        return parent;
+    }
+
+    public void setParent(TrieNode parent) {
+        this.parent = parent;
+    }
+
+    public TrieNode[] getChildren() {
+        return children;
+    }
+
+    public void setChildren(TrieNode[] children) {
+        this.children = children;
+    }
+
+    public void setLeaf(boolean leaf) {
+        isLeaf = leaf;
+    }
+
+    public boolean isWord() {
+        return isWord;
+    }
+
+    public void setWord(boolean word) {
+        isWord = word;
+    }
+
+    public char getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(char character) {
+        this.character = character;
+    }
+
     /**
      * Constructor for top level root node.
      */
@@ -122,5 +167,10 @@ public class TrieNode {
         } else {
             return parent.toString() + new String(new char[]{character});
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

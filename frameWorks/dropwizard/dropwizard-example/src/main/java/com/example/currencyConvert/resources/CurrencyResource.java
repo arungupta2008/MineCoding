@@ -28,7 +28,7 @@ public class CurrencyResource {
         DecimalFormat df = new DecimalFormat("#.#######");
         Double converted_amount = Double.valueOf(df.format(getRate(fromCurrency, toCurrency, amount)));
 
-        com.example.currencyConvert.Response.Response response = new com.example.currencyConvert.Response.Response();
+        com.example.currencyConvert.response.Response response = new com.example.currencyConvert.response.Response();
         response.setAmount(converted_amount);
         return Response.status(HttpStatus.OK_200).entity(response.toString()).build();
 

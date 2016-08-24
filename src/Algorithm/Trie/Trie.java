@@ -19,6 +19,14 @@ public class Trie {
     }
 
     /**
+     * Returns Root node of the Tri
+     * @return
+     */
+    public TrieNode getRootNode(){
+        return root;
+    }
+
+    /**
      * Adds a word to the Trie
      *
      * @param word
@@ -55,6 +63,11 @@ public class Trie {
 
     public TrieNode getNextTrieNode(char character, TrieNode trieNode){
         return trieNode.getNode(character);
+//        TrieNode node  = trieNode.getNode(character);
+//        if(node !=null){
+//            node.setParent(trieNode.getParent());
+//        }
+//        return node;
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.example.currencyConvert.Response;
+package com.example.currencyConvert.response;
 
 
 import com.example.currencyConvert.Helper.Helper;
@@ -7,6 +7,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class Response {
+    @Getter @Setter
     Double amount;
 
     @Override
