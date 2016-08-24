@@ -121,7 +121,7 @@ public class PhoneNoToWord {
                             // Searching from Root node
                             response = trie.getNextTrieNode(options);
                             if (response != null) {
-                                // Adding Space Node for Keeping Space between two Words.
+                                // Adding Space Node for Keeping Space between two Words. To give Space between Final Results
                                 TrieNode spaceNode = new TrieNode(' ');
                                 spaceNode.setParent(node);
 
