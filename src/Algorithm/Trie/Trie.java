@@ -78,7 +78,7 @@ public class Trie {
     private void trieTest() {
         System.out.println("Trie Testing");
         Trie trie = new Trie();
-        trie.addWord("Arun");
+        trie.addWord("ArunGupta");
         trie.addWord("Ajay");
         trie.addWord("Guay");
 
