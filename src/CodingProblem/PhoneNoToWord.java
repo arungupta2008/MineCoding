@@ -121,10 +121,15 @@ public class PhoneNoToWord {
                             // Searching from Root node
                             response = trie.getNextTrieNode(options);
                             if (response != null) {
+                                // Adding Space Node for Keeping Space between two Words.
+                                TrieNode spaceNode = new TrieNode(' ');
+                                spaceNode.setParent(node);
+
+
                                 // Copy by value, otherwise it was coming as Copy by reference then it was creating problem if we modify the Object.
                                 response = new TrieNode(response);
-                                // Setting up Older Parents, because if we don't it will forget older search.
-                                response.setParent(node);
+                                // Setting up Older Parents, because if we don't it will forget older search. // Adding Space Node.
+                                response.setParent(spaceNode);
                             }
                         } else {
                             // Getting Next Node for given Location in Trie

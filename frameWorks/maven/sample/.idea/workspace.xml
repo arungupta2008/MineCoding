@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cf7227c-ae9d-4702-b5e6-f9a940c8f78f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../src/Algorithm/Trie/Trie.java" afterPath="$PROJECT_DIR$/../../../src/Algorithm/Trie/Trie.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../src/CodingProblem/PhoneNoToWord.java" afterPath="$PROJECT_DIR$/../../../src/CodingProblem/PhoneNoToWord.java" />
     </list>
     <ignored path="sample.iws" />
