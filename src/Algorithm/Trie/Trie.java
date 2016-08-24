@@ -63,11 +63,6 @@ public class Trie {
 
     public TrieNode getNextTrieNode(char character, TrieNode trieNode){
         return trieNode.getNode(character);
-//        TrieNode node  = trieNode.getNode(character);
-//        if(node !=null){
-//            node.setParent(trieNode.getParent());
-//        }
-//        return node;
     }
 
     public static void main(String[] args) {
